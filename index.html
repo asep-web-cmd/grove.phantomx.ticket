@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GPX - Grove PhantomX</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- 24 EMOJI MENGAMBANG (dibuat oleh JS) -->
+  <div id="emoji-layer"></div>
+
+  <!-- TOMBOL ADMIN SELALU ADA -->
+  <button class="admin-float-btn" id="btn-admin-float" title="Admin Panel">🔒</button>
+
+  <!-- ===== HOME ===== -->
+  <div class="page active" id="page-home">
+    <div class="lava-bg"></div>
+    <div class="home-content">
+      <div class="trophy-icon">🏆</div>
+      <h1 class="gpx-title">GPX</h1>
+      <p class="gpx-sub">Grove PhantomX</p>
+      <button class="btn-main btn-rainbow" id="btn-ticket">🎫 make Ticket</button>
+    </div>
+  </div>
+
+  <!-- ===== USERNAME ===== -->
+  <div class="page" id="page-username">
+    <div class="lava-bg"></div>
+    <div class="paper-card">
+      <div class="card-top green-top">
+        <span class="step-badge">Step 1/3</span>
+        <div class="card-emoji">👾</div>
+        <h2>You Username Roblox?</h2>
+        <p>Write your Roblox name here~</p>
+      </div>
+      <div class="card-bottom">
+        <div class="field-group">
+          <label>✏️ Username Roblox</label>
+          <input type="text" id="input-username" placeholder="example: ProGamer123" autocomplete="off" />
+        </div>
+        <button class="btn-main btn-green" id="btn-username-submit">Next ➜</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== EMAIL ===== -->
+  <div class="page" id="page-email">
+    <div class="lava-bg"></div>
+    <div class="paper-card">
+      <div class="card-top purple-top">
+        <span class="step-badge">Step 2/3</span>
+        <div class="card-emoji">📧</div>
+        <h2>Email?</h2>
+        <p>Enter Ur email in here~</p>
+      </div>
+      <div class="card-bottom">
+        <div class="field-group">
+          <label>📩 Email</label>
+          <input type="text" id="input-email" placeholder="Example: IloveYou@email.com" autocomplete="off" />
+        </div>
+        <button class="btn-main btn-purple" id="btn-email-submit">Next ➜</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== KODE ===== -->
+  <div class="page" id="page-code">
+    <div class="lava-bg"></div>
+    <div class="paper-card">
+      <div class="card-top yellow-top">
+        <span class="step-badge">Step 3/3</span>
+        <div class="card-emoji">🔐</div>
+        <h2>secret code!</h2>
+        <p>click this code button</p>
+      </div>
+      <div class="card-bottom">
+        <button class="btn-get-code" id="btn-get-code">📋 Make ur code</button>
+        <div id="code-area" style="display:none">
+          <div class="countdown-box" id="countdown-box">
+            <span>⏳ wait</span>
+            <span class="big-num" id="countdown-num">20</span>
+            <span>second...</span>
+          </div>
+          <div class="revealed-code" id="revealed-code" style="display:none">
+            <p>ur code!!:</p>
+            <div class="code-show" id="the-code"></div>
+          </div>
+        </div>
+        <div class="field-group" style="margin-top:14px">
+          <label>🔑 enter 4 digit code</label>
+          <input type="text" id="input-code" placeholder="_ _ _ _" maxlength="4" inputmode="numeric" autocomplete="off" />
+        </div>
+        <button class="btn-main btn-yellow" id="btn-code-submit">Submit ✅</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== LOADING ===== -->
+  <div class="page" id="page-loading">
+    <div class="lava-bg"></div>
+    <div class="loading-box">
+      <div class="spin-ring"><div></div><div></div><div></div><div></div></div>
+      <div class="loading-emoji-row">⭐ ✨ 🌟 💫 ⭐</div>
+      <p class="loading-txt">verified youre ticket...</p>
+    </div>
+  </div>
+
+  <!-- ===== SERTIFIKAT ===== -->
+  <div class="page scroll-page" id="page-cert">
+    <div class="lava-bg"></div>
+    <div class="cert-outer">
+      <div class="cert-card">
+        <div class="cert-ribbon">✅ &nbsp; VERIFIED SUCCES &nbsp; ✅</div>
+        <h2 class="cert-title">🎉 Your verification succes!</h2>
+        <div class="cert-fields">
+          <div class="cert-field">
+            <span class="cf-label">👤 Name roblox</span>
+            <span class="cf-value" id="cert-username"></span>
+          </div>
+          <div class="cert-field">
+            <span class="cf-label">📅 Date</span>
+            <span class="cf-value" id="cert-date"></span>
+          </div>
+          <div class="cert-field cert-id-field">
+            <span class="cf-label">🔖 Verified ID</span>
+            <span class="cf-value cert-id-val" id="cert-verified-id"></span>
+          </div>
+        </div>
+        <div class="check-wrap">
+          <div class="check-circle" id="check-circle">✓</div>
+        </div>
+        <div class="cert-photo-note">
+          📸 Take a photo of this page as proof that you have created a RankTeam ticket!
+        </div>
+        <button class="btn-main btn-green cert-back-btn" id="btn-back">⬅️ back</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== LOCKED ===== -->
+  <div class="page" id="page-locked">
+    <div class="lava-bg"></div>
+    <div class="locked-card">
+      <div class="lock-emoji">🔒</div>
+      <h2 class="locked-h2">Website locked!</h2>
+      <p class="locked-p">You already make the ticket.</p>
+      <div class="locked-box">
+        <p>this website will open again for u on  <strong>Sunday</strong></p>
+        <div class="locked-date-txt" id="locked-date-display"></div>
+      </div>
+      <p class="locked-footer">Come back again on Sunday, okay! 👋</p>
+    </div>
+  </div>
+
+  <!-- ===== ADMIN LOGIN ===== -->
+  <div class="page" id="page-admin-login">
+    <div class="lava-bg"></div>
+    <div class="paper-card">
+      <div class="card-top dark-top">
+        <div class="card-emoji">🛡️</div>
+        <h2>Admin Panel</h2>
+        <p>Masukkan kredensial untuk masuk</p>
+      </div>
+      <div class="card-bottom">
+        <div class="field-group">
+          <label>👤 Nama Admin</label>
+          <input type="text" id="admin-name" placeholder="Nama admin..." autocomplete="off" />
+        </div>
+        <div class="field-group">
+          <label>🔑 Sandi</label>
+          <input type="password" id="admin-pass" placeholder="Sandi admin..." />
+        </div>
+        <div class="admin-err" id="admin-error" style="display:none">❌ Nama atau sandi salah!</div>
+        <button class="btn-main btn-dark" id="btn-admin-login">Masuk 🚀</button>
+        <button class="btn-kembali" id="btn-admin-back">← Kembali</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== ADMIN DASHBOARD ===== -->
+  <div class="page scroll-page" id="page-admin">
+    <div class="lava-bg"></div>
+    <div class="admin-wrap">
+      <div class="admin-topbar">
+        <span class="admin-brand">🛡️ GPX Admin</span>
+        <button class="btn-logout" id="btn-admin-logout">Keluar 🚪</button>
+      </div>
+
+      <!-- Stats -->
+      <div class="stat-row">
+        <div class="stat-box"><div class="stat-num" id="stat-total">0</div><div class="stat-lbl">Total Ticket</div></div>
+        <div class="stat-box stat-hari"><div class="stat-num" id="stat-today">0</div><div class="stat-lbl">Hari Ini</div></div>
+        <div class="stat-box stat-blokir"><div class="stat-num" id="stat-blocked">0</div><div class="stat-lbl">Diblokir</div></div>
+      </div>
+
+      <!-- Tabel Ticket -->
+      <div class="admin-table-card">
+        <div class="atc-header">
+          <h3>📋 Daftar Ticket Terverifikasi</h3>
+          <button class="btn-hapus" id="btn-clear-data">🗑️ Hapus Semua</button>
+        </div>
+        <div id="table-wrap" style="overflow-x:auto">
+          <table class="a-table" id="admin-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>👤 Username</th>
+                <th>📧 Email</th>
+                <th>🔖 Verified ID</th>
+                <th>📅 Tanggal</th>
+                <th>🕐 Waktu</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="admin-tbody"></tbody>
+          </table>
+          <div id="admin-empty" class="a-empty" style="display:none">😴 Belum ada ticket!</div>
+        </div>
+      </div>
+
+      <!-- Daftar Diblokir -->
+      <div class="admin-table-card" style="margin-top:16px">
+        <div class="atc-header">
+          <h3>🚫 Daftar Pengguna Diblokir</h3>
+        </div>
+        <div id="blocked-wrap">
+          <table class="a-table" id="blocked-table">
+            <thead>
+              <tr><th>#</th><th>👤 Username</th><th>Aksi</th></tr>
+            </thead>
+            <tbody id="blocked-tbody"></tbody>
+          </table>
+          <div id="blocked-empty" class="a-empty" style="display:none">✅ Tidak ada yang diblokir!</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
